@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --page-bg: #efe3d3;
+  --panel-bg: rgba(250, 243, 233, 0.88);
+  --panel-border: rgba(108, 74, 52, 0.14);
+  --text-1: #4a2f21;
+  --text-2: #7a5a46;
+  --ring: rgba(145, 93, 61, 0.18);
+}
+
+.dark {
+  color-scheme: dark;
+  --page-bg: #1c1512;
+  --panel-bg: rgba(42, 31, 27, 0.86);
+  --panel-border: rgba(206, 178, 151, 0.12);
+  --text-1: #fff6ec;
+  --text-2: #d3bdab;
+  --ring: rgba(180, 121, 88, 0.26);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(198, 141, 105, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(164, 106, 78, 0.12), transparent 24%),
+    radial-gradient(circle at center right, rgba(236, 210, 182, 0.18), transparent 26%),
+    var(--page-bg);
+  color: var(--text-1);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.surface {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 18px 50px rgba(94, 64, 48, 0.1);
+}
+
+.content-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply text-2xl font-semibold tracking-tight text-stone-950 dark:text-white md:text-3xl;
+}
+
+.section-copy {
+  @apply mt-3 max-w-2xl text-sm text-stone-600 dark:text-stone-300 md:text-base;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-[#8f5a3c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#75472f];
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-[#d7bca5] bg-white/80 px-5 py-3 text-sm font-semibold text-[#5b3a2b] transition hover:border-[#b98869] hover:text-[#7a4328] dark:border-stone-700 dark:bg-stone-900/80 dark:text-stone-200;
+}
+
+.input-base {
+  @apply w-full rounded-2xl border border-[#dcc3af] bg-[#fffaf5] px-4 py-3 text-sm text-[#4a2f21] outline-none ring-0 transition placeholder:text-[#a1826d] focus:border-[#c08a67] focus:shadow-[0_0_0_4px_var(--ring)] dark:border-stone-700 dark:bg-stone-950 dark:text-white dark:placeholder:text-stone-500;
+}
+
+.tag-pill {
+  @apply inline-flex items-center rounded-full border border-[#e5cbb6] bg-[#fff8f1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#8b5a3c] dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-100;
+}
